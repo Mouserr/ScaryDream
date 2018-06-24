@@ -42,9 +42,13 @@ public class FSMachine<T>
 	private void ChangeState(IFSMState<T> NewState)
 	{
 		if (currentState != null)
+		{
 			currentState.Exit(owner);
+		}
 		currentState = NewState;
 		if (currentState != null)
+		{
 			currentState.Enter(owner);
+		}
 	}
 }
